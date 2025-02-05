@@ -1,0 +1,89 @@
+{
+  "name": "spriced-platform-angular-workspace",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/spriced-platform-angular-workspace/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/spriced-platform-angular-workspace",
+        "index": "apps/spriced-platform-angular-workspace/src/index.html",
+        "browser": "apps/spriced-platform-angular-workspace/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/spriced-platform-angular-workspace/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/spriced-platform-angular-workspace/public"
+          }
+        ],
+        "styles": ["apps/spriced-platform-angular-workspace/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "spriced-platform-angular-workspace:build:production"
+        },
+        "development": {
+          "buildTarget": "spriced-platform-angular-workspace:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "spriced-platform-angular-workspace:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/spriced-platform-angular-workspace/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "spriced-platform-angular-workspace:build",
+        "staticFilePath": "dist/apps/spriced-platform-angular-workspace/browser",
+        "spa": true
+      }
+    }
+  }
+}

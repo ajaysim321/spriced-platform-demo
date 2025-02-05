@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@spriced-platform-angular-workspace/MainApp": [
+        "spriced-platform/MainApp/src/index.ts"
+      ],
+      "@spriced-platform-angular-workspace/PlatformUI": [
+        "spriced-platform/PlatformUI/src/index.ts"
+      ],
+      "@spriced-platform-angular-workspace/SharedUI": [
+        "spriced-platform/SharedUI/src/index.ts"
+      ],
+      "@spriced-platform-angular-workspace/platform-ui": [
+        "libs/platform-ui/src/index.ts"
+      ],
+      "@spriced-platform-angular-workspace/shared-ui": [
+        "spriced-platform/shared-ui/src/index.ts"
+      ],
+      "@spriced-platform-angular-workspace/shared-ui-lib": [
+        "libs/shared-ui-lib/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
