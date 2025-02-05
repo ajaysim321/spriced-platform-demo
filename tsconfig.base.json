@@ -25,7 +25,7 @@
         "spriced-platform/SharedUI/src/index.ts"
       ],
       "@spriced-platform-angular-workspace/platform-ui": [
-        "libs/platform-ui/src/index.ts"
+        "spriced-platform/platform-ui/src/index.ts"
       ],
       "@spriced-platform-angular-workspace/shared-ui": [
         "spriced-platform/shared-ui/src/index.ts"
